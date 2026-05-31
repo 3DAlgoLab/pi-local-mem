@@ -40,14 +40,14 @@ Sections auto-date entries for Decisions, Bugs & Fixes, and Changelog. Active Co
 
 ## Credit
 
-Forked from [pi-memd](https://github.com/whonixnetworks/pi-memd) by greedy. Stripped commands, strengthened context instructions, fixed file-read overhead, added dedup-on-write, and centralized section logic.
+Forked from [pi-memd](https://github.com/whonixnetworks/pi-memd) written by "greedy". Stripped commands, strengthened context instructions, fixed file-read overhead, added dedup-on-write, and centralized section logic.
 
 ## Install
 
 From GitHub:
 
 ```bash
-pi install github:3DAlgoLab/pi-local-mem
+pi install git:github.com/3DAlgoLab/pi-local-mem
 ```
 
 Or from npm:
@@ -60,7 +60,7 @@ Or add to `~/.pi/agent/settings.json`:
 
 ```json
 {
-  "packages": ["github:3DAlgoLab/pi-local-mem"]
+  "packages": ["git:github.com/3DAlgoLab/pi-local-mem"]
 }
 ```
 
@@ -68,18 +68,18 @@ Or project-local in `.pi/settings.json`:
 
 ```json
 {
-  "packages": ["github:3DAlgoLab/pi-local-mem"]
+  "packages": ["git:github.com/3DAlgoLab/pi-local-mem"]
 }
 ```
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `localmem_write` | Append entries or overwrite sections in LocalMem.md (duplicates skipped automatically) |
-| `localmem_read` | Read entire LocalMem.md or a specific section |
-| `localmem_search` | Search entries by keyword (case-insensitive) |
-| `localmem_clean` | Remove duplicates and stale entries (supports dry run) |
+| Tool              | Description                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| `localmem_write`  | Append entries or overwrite sections in LocalMem.md (duplicates skipped automatically) |
+| `localmem_read`   | Read entire LocalMem.md or a specific section                                          |
+| `localmem_search` | Search entries by keyword (case-insensitive)                                           |
+| `localmem_clean`  | Remove duplicates and stale entries (supports dry run)                                 |
 
 ## Configuration
 
@@ -98,14 +98,14 @@ In `~/.pi/agent/settings.json` or `.pi/settings.json`:
 }
 ```
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `enabled` | `true` | Enable/disable LocalMem |
-| `maxSizeKb` | `8` | Max LocalMem.md size in KB before lightweight injection |
-| `maxAgeDays` | `90` | Days before Changelog/Bugs entries are stale |
-| `sections` | 5 defaults | Section names in order |
-| `autoInit` | `true` | Auto-create LocalMem.md on first session |
-| `injectContext` | `true` | Inject LocalMem.md content into system prompt |
+| Setting         | Default    | Description                                             |
+| --------------- | ---------- | ------------------------------------------------------- |
+| `enabled`       | `true`     | Enable/disable LocalMem                                 |
+| `maxSizeKb`     | `8`        | Max LocalMem.md size in KB before lightweight injection |
+| `maxAgeDays`    | `90`       | Days before Changelog/Bugs entries are stale            |
+| `sections`      | 5 defaults | Section names in order                                  |
+| `autoInit`      | `true`     | Auto-create LocalMem.md on first session                |
+| `injectContext` | `true`     | Inject LocalMem.md content into system prompt           |
 
 ## How It Works
 
