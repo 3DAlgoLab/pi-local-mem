@@ -1,6 +1,6 @@
 {
   "name": "pi-local-mem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Project-level session memory for the pi coding agent — a single LocalMem.md file per project",
   "keywords": [
     "pi-package",

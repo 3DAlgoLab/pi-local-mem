@@ -6,7 +6,7 @@
  */
 
 import { readFileSync, existsSync } from "node:fs";
-import { join, dirname, sep } from "node:path";
+import { join } from "node:path";
 import { homedir } from "node:os";
 
 export interface LocalMemConfig {
@@ -62,19 +62,9 @@ function loadJsonFile(filePath: string): Record<string, unknown> {
 }
 
 /**
- * Find the project root by walking up from cwd looking for .pi/settings.json or .git.
+ * Return the cwd as the project root.
  */
 export function findProjectRoot(cwd: string): string {
-  let current = cwd;
-  const root = sep;
-
-  while (current !== root) {
-    if (existsSync(join(current, ".pi", "settings.json"))) return current;
-    if (existsSync(join(current, ".git"))) return current;
-    const parent = dirname(current);
-    if (parent === current) break;
-    current = parent;
-  }
   return cwd;
 }
 
